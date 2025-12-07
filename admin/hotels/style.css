@@ -1,0 +1,16 @@
+.list{
+    list-style: none; 
+    color: #55565A; 
+    line-height: 50px;
+}
+
+#menu-logo{
+    position:absolute; 
+    bottom: 0; 
+    display:flex;
+    justify-content: center; 
+    flex-flow: row wrap; 
+    left: 50%; 
+    right: 50%;
+    color: white;
+}
