@@ -11,71 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
-    <style>
-        #navbar{
-            display: flex; 
-            align-items: center; 
-            justify-content: space-evenly; 
-            background-color: #282725ff;
-            padding: 8px 0px;
-        }
 
-        #navbar h1{
-            margin: 0;
-        }
-
-        #signature{
-            color:#ffffff;
-        }
-        .menu,.content{
-            padding: 30px;
-        }
-
-        .list{
-            color: #ffffffff;
-            list-style: none;
-        }
-
-        .content h1,h2,h5,p{
-            /* color: #ffffffff; */
-            font-family: 'Poppins';
-        }
-
-        .content h1{
-            font-size: 30px;
-        }
-
-        .content p{
-            font-size: 14px;
-        }
-
-        .content{
-            /* background-color:#545454; */
-        }
-
-        .menu-button{
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-            font-size: 20px;
-            width: 100%;
-        }
-
-        form input,.col-form-label{
-            color: white;
-        }
-
-        #footer{
-            background-color: #282725ff;
-            padding: 30px;
-        }
-
-        #footer p{
-            color: white;
-        }
-
-    </style>
     <title>CHEEZU Hotel Reservation</title>
 </head>
 <body style="width: 100%; margin: 0; font-family: 'Alice';">
@@ -86,35 +22,37 @@
                     <h1>CheezU</h1>
                 </center>
 
-                <a href="#" style="position:absolute; right: 20px; background-color: transparent;border: 1px solid grey; padding: 10px; color: white; text-decoration: none; border-radius:5px;">
+                <a href="most_popular.php" style="position:absolute; right: 20px; background-color: transparent;border: 1px solid grey; padding: 10px; color: white; text-decoration: none; border-radius:5px;">
                     <span>Most Popular</span>
                 </a>
             </div>
         </div>
     
         <div style="padding:20px;" class="row">
-            <div class="col-12 row mx-auto" style="display: flex; background:url('images/hoteldark1.png');background-size: cover; height:400px;padding:20px;">
-                <div class="col-12" style="text-align:center; color: white;">
+            <div class="col-12 row mx-auto hero-banner">
+                <div class="col-12">
                     <h1>Heart of Japan
                     </h1>
-                    <button style="background-color:#e4e2e2ff; border-radius: 10px; padding: 10px; color: grey;">Explore Now</button>
+                    <a href="hotels">
+                        <button style="background-color:#e4e2e2ff; border-radius: 10px; padding: 10px; color: grey;">Explore Now</button>
+                    </a>
                 </div>
-                <div style="margin-top: 50px; text-align:center; color: grey;">
+                <div style="margin-top: 50px; color: grey;">
                     <form action="">
                         <input placeholder="Check In Date"
-                            class="textbox-n"
+                            class="textbox-n col-3 mx-1 date-button"
                             type="text"
                             onfocus="(this.type='date')"
                             onblur="(this.type='text')"
-                            id="date" style="color:white; padding: 20px; background-color: transparent; border-radius:10px;">
+                            id="date">
                         <input placeholder="Check Out Date"
-                            class="textbox-n"
+                            class="textbox-n col-3 mx-1 date-button"
                             type="text"
                             onfocus="(this.type='date')"
                             onblur="(this.type='text')"
-                            id="date" style="color:white; padding: 20px; background-color: transparent; border-radius:10px;">
+                            id="date">
                     
-                        <input type="submit" name="search" value="Search Hotel" style="color:white; padding: 20px; background-color: grey; border-radius:10px;">
+                        <input class="col-3 mx-1" type="submit" name="search" value="Search Hotel" style="color:white; padding: 20px; background-color: grey; border-radius:10px;">
                     </form>
                 </div>
             </div>

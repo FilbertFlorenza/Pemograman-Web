@@ -1,0 +1,82 @@
+#navbar{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-evenly; 
+    background-color: #282725ff;
+    padding: 8px 0px;
+}
+
+#navbar h1{
+    margin: 0;
+}
+
+.hero-banner{
+    display: flex; 
+    background:url('images/hoteldark1.png');
+    background-size: cover; 
+    height:400px;
+    padding:20px;
+    border-radius:15px;
+}
+
+.hero-banner div{
+    text-align: center;
+    color: white;
+}
+
+.hero-banner .date-button{
+    color:white; 
+    padding: 20px; 
+    background-color: transparent; 
+    border-radius:10px;
+}
+
+#signature{
+    color:#ffffff;
+}
+.menu,.content{
+    padding: 30px;
+}
+
+.list{
+    color: #ffffffff;
+    list-style: none;
+}
+
+.content h1,h2,h5,p{
+    /* color: #ffffffff; */
+    font-family: 'Poppins';
+}
+
+.content h1{
+    font-size: 30px;
+}
+
+.content p{
+    font-size: 14px;
+}
+
+.content{
+    /* background-color:#545454; */
+}
+
+.menu-button{
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    font-size: 20px;
+    width: 100%;
+}
+
+form input,.col-form-label{
+    color: white;
+}
+
+#footer{
+    background-color: #282725ff;
+    padding: 30px;
+}
+
+#footer p{
+    color: white;
+}
