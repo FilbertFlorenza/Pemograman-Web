@@ -132,7 +132,7 @@
                             <input type="file" class="form-control-file" id="room_images" name="room_images[]" accept="image/*" multiple>
                         </div>
                     </div>
-                    <button type="submit" name="submit" class="btn btn-dark mb-2">Submit</button>
+                    <button type="submit" name="submit_add" class="btn btn-dark mb-2">Submit</button>
                 </form>
             </div>
         </div>

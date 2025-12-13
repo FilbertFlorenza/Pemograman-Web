@@ -19,12 +19,11 @@
         <div id="signature" class="row">
             <div id="navbar">
                 <center>
-                    <h1>CheezU</h1>
+                    <a href="index.php">
+                        <h1>CheezU</h1>
+                    </a>
                 </center>
 
-                <a href="most_popular.php" style="position:absolute; right: 20px; background-color: transparent;border: 1px solid grey; padding: 10px; color: white; text-decoration: none; border-radius:5px;">
-                    <span>Most Popular</span>
-                </a>
             </div>
         </div>
     
@@ -38,22 +37,11 @@
                     </a>
                 </div>
                 <div style="margin-top: 50px; color: grey;">
-                    <form action="">
-                        <input placeholder="Check In Date"
-                            class="textbox-n col-3 mx-1 date-button"
-                            type="text"
-                            onfocus="(this.type='date')"
-                            onblur="(this.type='text')"
-                            id="date">
-                        <input placeholder="Check Out Date"
-                            class="textbox-n col-3 mx-1 date-button"
-                            type="text"
-                            onfocus="(this.type='date')"
-                            onblur="(this.type='text')"
-                            id="date">
-                    
-                        <input class="col-3 mx-1" type="submit" name="search" value="Search Hotel" style="color:white; padding: 20px; background-color: grey; border-radius:10px;">
-                    </form>
+                    <a href="hotels.php">
+                        <button class="col-3 mx-1" style="color:white; padding: 20px; background-color: grey; border-radius:10px;">
+                            Search Hotel
+                        </button>
+                    </a>
                 </div>
             </div>
 

@@ -6,6 +6,11 @@
     padding: 8px 0px;
 }
 
+#navbar a{
+    text-decoration: none;
+    color: white;
+}
+
 #navbar h1{
     margin: 0;
 }

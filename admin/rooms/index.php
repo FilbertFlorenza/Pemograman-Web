@@ -128,7 +128,7 @@
                                         <td>{$row['status']}</td>
                                         <td>
                                             <a href='edit.php?id={$row['id_room']}'>Edit</a> | 
-                                            <a href='delete.php?id={$row['id_room']}'>Delete</a>
+                                            <a href='crud.php?id={$row['id_room']}&delete=1'>Delete</a>
                                         </td>
                                     </tr>";
                             $i++;

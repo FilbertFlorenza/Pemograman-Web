@@ -2,19 +2,6 @@
     include "../auth.php";
     include "../../db_connection.php"; 
 
-    //BASE URL
-    function base_url(){
-        if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
-            $protocol = "https://";
-        }else{
-            $protocol = "http://";
-        } 
-        $project_folder = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'))[0];
-        $base_url = $protocol . $_SERVER['HTTP_HOST'] . '/' . $project_folder;
-        
-        return $base_url;
-    }
-
     if (isset($_POST['submit_add'])) {
         add_hotel($connection, $_POST);
     }
@@ -79,9 +66,7 @@
                 $file_name = basename($data['hotel_images']['name'][$key]);
 
                 $target_file_path = $target_dir . $file_name;
-                $db_file_path = base_url() . '/uploads/' . $file_name;
-
-                $file_type = strtolower(pathinfo($target_file_path, PATHINFO_EXTENSION));
+                $db_file_path = 'http://localhost/Pemograman-Web' . '/uploads/' . $file_name;
 
                 // Upload file
                 if (move_uploaded_file($data['hotel_images']['tmp_name'][$key], $target_file_path)) {
@@ -109,7 +94,7 @@
 
             // Convert URL to server path
             $server_path = str_replace(
-                "http://{$_SERVER['HTTP_HOST']}/" . $project_folder . "/uploads/",
+                "http://localhost/Pemograman-Web/uploads",
                 "../../uploads/",
                 $file_url
             );
