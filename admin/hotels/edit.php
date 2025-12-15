@@ -129,7 +129,7 @@
                     </div>
                     
                     <div class="d-flex gap-2">
-                        <a href="<?php echo $base_url. '/admin/hotels';?>">
+                        <a href="http://localhost/Pemograman_Web/admin/hotels';?>">
                             <span class="btn btn-secondary mb-2">Back</span>
                         </a>
                         <button type="submit" name="submit_edit" class="btn btn-dark mb-2">Submit</button>

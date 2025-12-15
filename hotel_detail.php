@@ -1,10 +1,10 @@
 <?php
     session_start();
     include 'db_connection.php';
-    if(isset($_GET['hotel'])){
-        $result = mysqli_query($connection, "SELECT * FROM hotels WHERE hotel_name LIKE '%{$_GET['hotel']}%'");
+    if(isset($_GET['id'])){
+        $result = mysqli_query($connection, "SELECT * FROM hotels WHERE id_hotel={$_GET['id']}");
     }else{
-        $result = mysqli_query($connection, 'SELECT * FROM hotels');
+        header('Location: ../');
     }
 ?>
 <!DOCTYPE html>
@@ -41,7 +41,7 @@
         </div>
     
         <div style="" class="row mt-5">
-            <h1 class="text-center">Available Hotels</h1>
+            <h1 class="text-center">Booking</h1>
             <div class="mx-auto banner">
                 <div class="row align-items-center text-center p-3" style="background: url('images/bamboo-background.jpg'); color: white;">
                     <div class="col-12">
@@ -78,7 +78,7 @@
                                 </div>
                             </div>
                             <div class="col-2">
-                                <a href="<?php echo 'http://localhost/Pemograman-Web/hotel_detail?id=' . $row['id_hotel']?>">
+                                <a href="<?php echo 'http://localhost/Pemograman-Web/hotel_detail.php?id=' . $row['id_hotel']?>">
                                     <button style="background-color: grey; color: white; padding: 10px; border-radius:15px;">
                                         Book Now
                                     </button>
