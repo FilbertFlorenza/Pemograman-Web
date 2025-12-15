@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +21,7 @@
             <div id="navbar">
                 <center>
                     <a href="index.php">
-                        <h1>CheezU</h1>
+                        <img src="http://localhost/Pemograman-Web/images/logo.png" height="60px">
                     </a>
                 </center>
 
@@ -32,9 +33,6 @@
                 <div class="col-12">
                     <h1>Heart of Japan
                     </h1>
-                    <a href="hotels">
-                        <button style="background-color:#e4e2e2ff; border-radius: 10px; padding: 10px; color: grey;">Explore Now</button>
-                    </a>
                 </div>
                 <div style="margin-top: 50px; color: grey;">
                     <a href="hotels.php">

@@ -57,7 +57,7 @@
             padding: 30px;
         }
     </style>
-    <title>Hotels</title>
+    <title>Rooms</title>
 </head>
 <body style="width: 100%; margin: 0; font-family: 'Alice';">
     <div id="signature" class="row">
@@ -72,17 +72,22 @@
         <div class="menu col-3" style="background-color: #686868; position: relative;">
             <center>
                 <div class="d-flex flex-column gap-3">
-                   <a href="http://localhost/projek_web/admin/hotels">
+                   <a href="http://localhost/Pemograman-Web/admin/hotels">
                         <button class="menu-button">
                             Hotel
                         </button>
                     </a>
-                    <a href="http://localhost/projek_web/admin/rooms">
+                    <a href="http://localhost/Pemograman-Web/admin/rooms">
                         <button class="menu-button">
                             Room Types
                         </button>
                     </a>
-                    <a href="http://localhost/projek_web/admin/logout.php">
+                    <a href="http://localhost/Pemograman-Web/admin/reservations">
+                        <button class="menu-button">
+                            Reservations
+                        </button>
+                    </a>
+                    <a href="http://localhost/Pemograman-Web/admin/logout.php">
                         <button class="menu-button">
                             Logout
                         </button>

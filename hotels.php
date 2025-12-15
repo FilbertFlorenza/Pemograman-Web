@@ -12,6 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +35,7 @@
             <div id="navbar">
                 <center>
                     <a href="index.php">
-                        <h1>CheezU</h1>
+                        <img src="http://localhost/Pemograman-Web/images/logo.png" height="60px">
                     </a>
                 </center>
             </div>
@@ -66,10 +67,10 @@
                             $image_row = mysqli_fetch_assoc($image_query);
                         ?>
                         <div class="row my-3 align-items-center text-center">
-                            <div class="col-4">
+                            <div class="col-3">
                                 <img src="<?php echo $image_row['file_path']?>" alt="" height="200px" width="100%" style="border:2px solid black; border-radius: 15px;">
                             </div>
-                            <div class="col-6 overflow-hidden">
+                            <div class="col-7 overflow-hidden">
                                 <div>
                                     <h1><?php echo $row['hotel_name']?></h1>
                                 </div>
@@ -78,13 +79,16 @@
                                 </div>
                             </div>
                             <div class="col-2">
-                                <a href="<?php echo 'http://localhost/Pemograman-Web/hotel_detail?id=' . $row['id_hotel']?>">
+                                <a href="<?php echo 'http://localhost/Pemograman-Web/hotel_detail.php?id=' . $row['id_hotel']?>">
                                     <button style="background-color: grey; color: white; padding: 10px; border-radius:15px;">
                                         Book Now
                                     </button>
                                 </a>
                             </div>
                         </div>
+                        
+                        <hr>
+                       
                 <?php    
                     }
                 ?>

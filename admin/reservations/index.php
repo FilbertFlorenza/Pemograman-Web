@@ -1,9 +1,9 @@
 <?php
     include '../auth.php';
     include '../../db_connection.php';
-    $result = mysqli_query($connection, "SELECT * FROM HOTELS");
+    $query = "SELECT * FROM reservations JOIN hotels on reservations.id_hotel = hotels.id_hotel";
+    $result = mysqli_query($connection, $query);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,12 +48,16 @@
             width: 100%;
         }
 
+        form input,.col-form-label{
+            color: white;
+        }
+
         #footer{
             background-color: #8f8e8e;
             padding: 30px;
         }
     </style>
-    <title>Hotels</title>
+    <title>Reservations</title>
 </head>
 <body style="width: 100%; margin: 0; font-family: 'Alice';">
     <div id="signature" class="row">
@@ -68,7 +72,7 @@
         <div class="menu col-3" style="background-color: #686868; position: relative;">
             <center>
                 <div class="d-flex flex-column gap-3">
-                    <a href="http://localhost/Pemograman-Web/admin/hotels">
+                   <a href="http://localhost/Pemograman-Web/admin/hotels">
                         <button class="menu-button">
                             Hotel
                         </button>
@@ -100,10 +104,7 @@
         <div class="content col-9"  >
             <div class="row">
                 <div class="col-12 p-3 d-flex justify-content-between">
-                    <h2>Hotels List</h2>
-                    <a href="add.php">
-                        <button>Add Hotel</button>
-                    </a>
+                    <h2>Reservations</h2>
                 </div>
                 <div class="col-12 px-3">
                     <table class="table table-dark">
@@ -111,8 +112,10 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Hotel Name</th>
-                                <th scope="col">Hotel Address</th>
-                                <th scope="col">Actions</th>
+                                <th scope="col">Guest Name</th>
+                                <th scope="col">Total Price</th>
+                                <th scope="col">Check-in Date</th>
+                                <th scope="col">Check-out Date</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -122,18 +125,17 @@
                                 echo "<tr>
                                         <th scope=\"row\">{$i}</th>
                                         <td>{$row['hotel_name']}</td>
-                                        <td>{$row['hotel_address']}</td>
-                                        <td>
-                                            <a href='edit.php?id={$row['id_hotel']}'>Edit</a> | 
-                                            <a href='process.php?id={$row['id_hotel']}&submit_delete=1'>Delete</a>
-                                        </td>
+                                        <td>{$row['guest_name']}</td>
+                                        <td>{$row['total_price']}</td>
+                                        <td>{$row['check_in_date']}</td>
+                                        <td>{$row['check_out_date']}</td>
                                     </tr>";
                             $i++;
                             }
                             ?>
                         </tbody>
                     </table>
-                </div>     
+                </div>
             </div>
         </div>
     </div>
@@ -144,6 +146,5 @@
            All rights reserved.
         </p>
     </div>
-    
 </body>
 </html>

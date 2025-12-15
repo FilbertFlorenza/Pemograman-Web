@@ -5,10 +5,11 @@
     if (isset($_POST['submit_add'])) {
         $hotel = $_POST['hotel'];
         $room_name = $_POST['room_name'];
+        $room_description = $_POST['room_description'];
         $price_per_night = $_POST['price_per_night'];
         
         // Insert to rooms table
-        $query = "INSERT INTO rooms (id_hotel, room_name, price_per_night, status) VALUES ('$hotel','$room_name', '$price_per_night', 'Available')";
+        $query = "INSERT INTO rooms (id_hotel, room_name, room_description, price_per_night, status) VALUES ('$hotel','$room_name', '$room_description', '$price_per_night', 'Available')";
         mysqli_query($connection, $query);
 
         // Get the inserted hotel ID
@@ -43,12 +44,14 @@
     }
 
     if (isset($_POST['submit_edit'])) {
+        $id = $_POST['id_room'];
         $hotel = $_POST['hotel'];
         $room_name = $_POST['room_name'];
+        $room_description = $_POST['room_description'];
         $price_per_night = $_POST['price_per_night'];
         
         // Update rooms table
-        $query = "UPDATE rooms SET id_hotel='$hotel' , room_name = '$room_name', price_per_night='$price_per_night' WHERE id_room=$id";
+        $query = "UPDATE rooms SET id_hotel='$hotel' , room_name = '$room_name', room_description = '$room_description', price_per_night='$price_per_night' WHERE id_room=$id";
         mysqli_query($connection, $query);
 
         // Get all images for that room

@@ -71,17 +71,22 @@
         <div class="menu col-3" style="background-color: #686868; position: relative;">
             <center>
                 <div class="d-flex flex-column gap-3">
-                   <a href="http://localhost/projek_web/admin/hotels">
+                   <a href="http://localhost/Pemograman-Web/admin/hotels">
                         <button class="menu-button">
                             Hotel
                         </button>
                     </a>
-                    <a href="http://localhost/projek_web/admin/rooms">
+                    <a href="http://localhost/Pemograman-Web/admin/rooms">
                         <button class="menu-button">
                             Room Types
                         </button>
                     </a>
-                    <a href="http://localhost/projek_web/admin/logout.php">
+                    <a href="http://localhost/Pemograman-Web/admin/reservations">
+                        <button class="menu-button">
+                            Reservations
+                        </button>
+                    </a>
+                    <a href="http://localhost/Pemograman-Web/admin/logout.php">
                         <button class="menu-button">
                             Logout
                         </button>
@@ -98,7 +103,7 @@
         <div class="content col-9"  >
             <div class="row p-3">
                 <h2>Add Room</h2>
-                <form method="POST" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data" action="crud.php">
                     <div class="form-group row my-2">
                         <label for="room_name" class="col-2 col-form-label">Hotel</label>
                         <div class="col-10">
@@ -118,6 +123,12 @@
                         <label for="room_name" class="col-2 col-form-label">Room Name</label>
                         <div class="col-10">
                             <input type="text" class="form-control" id="room_name" name="room_name" placeholder="Your Room Name">
+                        </div>
+                    </div>
+                    <div class="form-group row my-2">
+                        <label for="room_name" class="col-2 col-form-label">Room Description</label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" id="room_description" name="room_description" placeholder="Your Room Description">
                         </div>
                     </div>
                     <div class="form-group row my-2">
