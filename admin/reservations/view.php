@@ -1,11 +1,10 @@
 <?php 
     include '../auth.php';
-    include "../../db_connection.php"; 
-
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-        $data = mysqli_query($connection, "SELECT * FROM hotels WHERE id_hotel=$id");
+        $data = mysqli_query($connection, "SELECT * FROM reservations WHERE id_reservation=$id");
         $row = mysqli_fetch_assoc($data);
+        
     }else{
         header('Location: index.php');
     }
@@ -109,25 +108,24 @@
         </div>
         <div class="content col-9"  >
             <div class="row p-3">
-                <h2>Edit Hotel</h2>
+                <h2>Add Hotel</h2>
                 <form method="POST" enctype="multipart/form-data" action="process.php">
-                    <input type="hidden" name="hotel_id" value="<?php echo $row['id_hotel']; ?>">
                     <div class="form-group row my-2">
                         <label for="hotel_name" class="col-2 col-form-label">Hotel Name</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="hotel_name" name="hotel_name" value="<?php echo $row['hotel_name']; ?>">
+                            <input type="text" class="form-control" id="hotel_name" name="hotel_name" placeholder="Your Hotel Name">
                         </div>
                     </div>
                     <div class="form-group row my-2">
                         <label for="hotel_address" class="col-2 col-form-label">Hotel Address</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="hotel_address" name="hotel_address" value="<?php echo $row['hotel_address']; ?>">
+                            <input type="text" class="form-control" id="hotel_address" name="hotel_address" placeholder="Your Hotel Address">
                         </div>
                     </div>
                     <div class="form-group row my-2">
                         <label for="hotel_description" class="col-2 col-form-label">Hotel Description</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="hotel_description" name="hotel_description" value="<?php echo $row['hotel_description']; ?>">
+                            <input type="text" class="form-control" id="hotel_description" name="hotel_description" placeholder="Your Hotel Description">
                         </div>
                     </div>
                     <div class="form-group row my-2">
@@ -136,14 +134,13 @@
                             <input type="file" class="form-control-file" id="hotel_images" name="hotel_images[]" accept="image/*" multiple>
                         </div>
                     </div>
-                    
+
                     <div class="d-flex gap-2">
-                        <a href="http://localhost/Pemograman_Web/admin/hotels';?>">
+                        <a href="http://localhost/Pemograman-Web/admin/hotels">
                             <span class="btn btn-secondary mb-2">Back</span>
                         </a>
-                        <button type="submit" name="submit_edit" class="btn btn-dark mb-2">Submit</button>
+                        <button type="submit" name="submit_add" class="btn btn-dark mb-2">Submit</button>
                     </div>
-                    
                 </form>
             </div>
         </div>

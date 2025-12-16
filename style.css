@@ -48,7 +48,10 @@
     list-style: none;
 }
 
-.content h1,h2,h5,p{
+.content h1,
+.content h2,
+.content h5,
+.content p{
     /* color: #ffffffff; */
     font-family: 'Poppins';
 }

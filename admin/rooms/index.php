@@ -1,7 +1,10 @@
 <?php
     include '../auth.php';
     include '../../db_connection.php';
-    $query = "SELECT * FROM rooms JOIN hotels ON rooms.id_hotel = hotels.id_hotel";
+    $query = "SELECT rooms.*, hotels.hotel_name, SUM(reservation_rooms.quantity) as total_reservations FROM rooms 
+    JOIN hotels ON rooms.id_hotel = hotels.id_hotel 
+    LEFT JOIN reservation_rooms on rooms.id_room = reservation_rooms.id_room
+    GROUP BY rooms.id_room";
     $result = mysqli_query($connection, $query);
 ?>
 <!DOCTYPE html>
@@ -117,6 +120,7 @@
                                 <th scope="col">Hotel Name</th>
                                 <th scope="col">Room Type Name</th>
                                 <th scope="col">Price Per Night</th>
+                                <th scope="col">Total Reservations</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Actions</th>
                             </tr>
@@ -130,6 +134,7 @@
                                         <td>{$row['hotel_name']}</td>
                                         <td>{$row['room_name']}</td>
                                         <td>{$row['price_per_night']}</td>
+                                        <td>{$row['total_reservations']}</td>
                                         <td>{$row['status']}</td>
                                         <td>
                                             <a href='edit.php?id={$row['id_room']}'>Edit</a> | 
@@ -152,5 +157,41 @@
            All rights reserved.
         </p>
     </div>
+    <?php if (!empty($_SESSION['message'])): ?>
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;">
+        <div class="toast align-items-center text-bg-<?= $_SESSION['message_type'] ?? 'primary' ?> border-0"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true">
+
+            <div class="d-flex">
+                <div class="toast-body">
+                    <?= htmlspecialchars($_SESSION['message']) ?>
+                </div>
+                <button type="button"
+                        class="btn-close btn-close-white me-2 m-auto"
+                        data-bs-dismiss="toast"
+                        aria-label="Close">
+                </button>
+            </div>
+        </div>
+    </div>
+    <?php 
+    unset($_SESSION['message']);
+    unset($_SESSION['message_type']);
+    endif; ?>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toastEl = document.querySelector('.toast');
+        if (toastEl) {
+            const toast = new bootstrap.Toast(toastEl, {
+                delay: 3000
+            });
+            toast.show();
+        }
+    });
+</script>
 </html>

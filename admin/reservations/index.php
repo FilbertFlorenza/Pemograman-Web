@@ -1,7 +1,7 @@
 <?php
     include '../auth.php';
     include '../../db_connection.php';
-    $query = "SELECT * FROM reservations JOIN hotels on reservations.id_hotel = hotels.id_hotel";
+    $query = "SELECT * as total_reservation FROM reservations";
     $result = mysqli_query($connection, $query);
 ?>
 <!DOCTYPE html>
@@ -116,6 +116,7 @@
                                 <th scope="col">Total Price</th>
                                 <th scope="col">Check-in Date</th>
                                 <th scope="col">Check-out Date</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -129,6 +130,9 @@
                                         <td>{$row['total_price']}</td>
                                         <td>{$row['check_in_date']}</td>
                                         <td>{$row['check_out_date']}</td>
+                                        <td>
+                                            <a href='view.php?id={$row['id_reservation']}'>View</a>
+                                        </td>
                                     </tr>";
                             $i++;
                             }

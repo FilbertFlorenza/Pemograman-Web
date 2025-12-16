@@ -1,7 +1,7 @@
 <?php
     include '../auth.php';
     include '../../db_connection.php';
-    $result = mysqli_query($connection, "SELECT * FROM HOTELS");
+    $result = mysqli_query($connection, "SELECT HOTELS.* , COUNT(reservations.id_reservation) AS total_reservations FROM HOTELS LEFT JOIN reservations on reservations.id_hotel = HOTELS.id_hotel GROUP BY HOTELS.id_hotel");
 ?>
 
 <!DOCTYPE html>
@@ -112,6 +112,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Hotel Name</th>
                                 <th scope="col">Hotel Address</th>
+                                <th scope="col">Total Reservation</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
@@ -123,6 +124,7 @@
                                         <th scope=\"row\">{$i}</th>
                                         <td>{$row['hotel_name']}</td>
                                         <td>{$row['hotel_address']}</td>
+                                        <td>{$row['total_reservations']}</td>
                                         <td>
                                             <a href='edit.php?id={$row['id_hotel']}'>Edit</a> | 
                                             <a href='process.php?id={$row['id_hotel']}&submit_delete=1'>Delete</a>

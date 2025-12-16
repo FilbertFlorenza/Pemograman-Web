@@ -24,8 +24,8 @@
     <style>
         .banner{
             padding:15px 0px; 
-            border-top: 5px solid #9a6724ff; 
-            border-bottom: 5px solid #9a6724ff;
+            border-top: 3px solid #9a6724ff; 
+            border-bottom: 3px solid #9a6724ff;
         }
     </style>
 </head>

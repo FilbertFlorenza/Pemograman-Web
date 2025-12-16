@@ -56,7 +56,7 @@
             padding: 30px;
         }
     </style>
-    <title>Hotels</title>
+    <title>Rooms</title>
 </head>
 <body style="width: 100%; margin: 0; font-family: 'Alice';">
     <div id="signature" class="row">
@@ -128,7 +128,7 @@
                     <div class="form-group row my-2">
                         <label for="room_name" class="col-2 col-form-label">Room Description</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="room_description" name="room_description" placeholder="Your Room Description">
+                            <textarea class="form-control" id="room_description" name="room_description"></textarea>
                         </div>
                     </div>
                     <div class="form-group row my-2">
@@ -140,7 +140,7 @@
                     <div class="form-group row my-2">
                         <label for="room_images" class="col-2 col-form-label">Room Images</label>
                         <div class="col-10">
-                            <input type="file" class="form-control-file" id="room_images" name="room_images[]" accept="image/*" multiple>
+                            <input type="file" class="form-control-file" id="room_images" name="room_images" accept="image/*">
                         </div>
                     </div>
                     <button type="submit" name="submit_add" class="btn btn-dark mb-2">Submit</button>

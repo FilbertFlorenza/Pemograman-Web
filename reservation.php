@@ -48,18 +48,17 @@
     <style>
         .banner{
             padding:15px 0px; 
-            border-top: 5px solid #9a6724ff; 
-            border-bottom: 5px solid #9a6724ff;
+            border-top: 3px solid #9a6724ff; 
+            border-bottom: 3px solid #9a6724ff;
         }
 
-        .carousel{
-            border: 2px solid black;
-            border-radius: 15px;
-        }
-
-        .carousel-item img{
-            height: 400px;
-            width: 100%;
+        .reservation-card {
+            max-width: 700px;
+            margin: 3rem auto;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
     </style>
 </head>
@@ -87,19 +86,24 @@
             </div>
 
             <div class="col-12 row mx-auto" style="background-color:white; margin-top: 20px;">
-                <div class="col-6 mx-auto text-center">
-                    <h3>
+                <div class="col-6 mx-auto text-center reservation-card">
+                    <h5>
                         Check-in Date: <?=$check_in_date?>
-                    </h3>
-                    <h3>
+                    </h5>
+                    <h5>
                         Check-out Date: <?=$check_out_date?>
-                    </h3>
+                    </h5>
                     <h3>
                         Total Price: <?=$total?>
                     </h3>
                     <h4>
                         Thanks for your reservation, we hope you will come back again!
                     </h4>
+                    <div class="text-center mt-4">
+                        <a href="index.php" class="btn btn-secondary btn-lg">
+                            Back to Home
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="mx-auto banner">

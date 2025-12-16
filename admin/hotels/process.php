@@ -104,6 +104,8 @@
                 unlink($server_path);
             }
         }
+
+        mysqli_query($connection, "DELETE FROM hotel_images WHERE id_hotel=$id_hotel");
     }
 
     header("Location: index.php");
