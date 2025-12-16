@@ -27,6 +27,11 @@
             border-top: 3px solid #9a6724ff; 
             border-bottom: 3px solid #9a6724ff;
         }
+
+        .hotel h1{
+            font-family: poppins;
+
+        }
     </style>
 </head>
 <body style="width: 100%; margin: 0; font-family: 'Alice';">
@@ -41,14 +46,14 @@
             </div>
         </div>
     
-        <div style="" class="row mt-5">
-            <h1 class="text-center">Available Hotels</h1>
+        <div style="" class="bar row mt-5">
+            <h1 class="text-center" style="font-size:40 px;">Available Hotels</h1>
             <div class="mx-auto banner">
                 <div class="row align-items-center text-center p-3" style="background: url('images/bamboo-background.jpg'); color: white;">
                     <div class="col-12">
                         <form method="get">
                             <div class="input-group justify-content-center">
-                                <div class="form-outline" data-mdb-input-init>
+                                <div class="form-outline">
                                     <input type="search" name="hotel" id="hotel" class="form-control" placeholder="Search"/>
                                 </div>
                                 <button type="submit" class="btn btn-secondary" data-mdb-ripple-init>
@@ -66,7 +71,7 @@
                             $image_query = mysqli_query($connection, "SELECT * FROM hotel_images WHERE id_hotel={$row['id_hotel']} LIMIT 1");
                             $image_row = mysqli_fetch_assoc($image_query);
                         ?>
-                        <div class="row my-3 align-items-center text-center">
+                        <div class="hotel row my-3 align-items-center text-center">
                             <div class="col-3">
                                 <img src="<?php echo $image_row['file_path']?>" alt="" height="200px" width="100%" style="border:2px solid black; border-radius: 15px;">
                             </div>

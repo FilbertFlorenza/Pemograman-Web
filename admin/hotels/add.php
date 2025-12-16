@@ -102,25 +102,25 @@
             <div class="row p-3">
                 <h2>Add Hotel</h2>
                 <form method="POST" enctype="multipart/form-data" action="process.php">
-                    <div class="form-group row my-2">
+                    <div class="row my-2">
                         <label for="hotel_name" class="col-2 col-form-label">Hotel Name</label>
                         <div class="col-10">
                             <input type="text" class="form-control" id="hotel_name" name="hotel_name" placeholder="Your Hotel Name">
                         </div>
                     </div>
-                    <div class="form-group row my-2">
+                    <div class="row my-2">
                         <label for="hotel_address" class="col-2 col-form-label">Hotel Address</label>
                         <div class="col-10">
                             <input type="text" class="form-control" id="hotel_address" name="hotel_address" placeholder="Your Hotel Address">
                         </div>
                     </div>
-                    <div class="form-group row my-2">
+                    <div class="row my-2">
                         <label for="hotel_description" class="col-2 col-form-label">Hotel Description</label>
                         <div class="col-10">
                             <input type="text" class="form-control" id="hotel_description" name="hotel_description" placeholder="Your Hotel Description">
                         </div>
                     </div>
-                    <div class="form-group row my-2">
+                    <div class="row my-2">
                         <label for="hotel_description" class="col-2 col-form-label">Hotel Images</label>
                         <div class="col-10">
                             <input type="file" class="form-control-file" id="hotel_images" name="hotel_images[]" accept="image/*" multiple>
