@@ -89,9 +89,6 @@
 
             $file_url = $row['file_path'];
 
-            // Detect project root folder
-            $project_folder = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'))[0];
-
             // Convert URL to server path
             $server_path = str_replace(
                 "http://localhost/Pemograman-Web/uploads",
