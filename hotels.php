@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include 'db_connection.php';
     if(isset($_GET['hotel'])){
         $result = mysqli_query($connection, "SELECT * FROM hotels WHERE hotel_name LIKE '%{$_GET['hotel']}%'");

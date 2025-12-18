@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include 'db_connection.php';
     if(isset($_GET['id'])){
         $result = mysqli_query($connection, "SELECT * FROM hotels WHERE id_hotel={$_GET['id']}");
